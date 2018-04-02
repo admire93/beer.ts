@@ -1,0 +1,19 @@
+{
+  "name": "beer.ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/admire93/beer.ts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/admire93/beer.ts/issues"
+  },
+  "homepage": "https://github.com/admire93/beer.ts"
+}
