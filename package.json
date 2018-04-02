@@ -6,7 +6,8 @@
   "scripts": {
     "postbuild": "copyfiles index.html dist",
     "build": "webpack --config ./config/webpack.config.js",
-    "start": "webpack-dev-server --mode development --config ./config/webpack.config.js"
+    "start": "webpack-dev-server --mode development --config ./config/webpack.config.js",
+    "lint": "tslint --project ."
   },
   "repository": {
     "type": "git",
