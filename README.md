@@ -11,7 +11,7 @@ It requires,
 - node 8.7.0+
 
 ```bash
-$ npm install
+./install.sh
 ```
 
 
