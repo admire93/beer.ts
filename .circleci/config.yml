@@ -10,9 +10,33 @@ jobs:
           keys:
           - dependencies-{{ checksum "package.json" }}
           - dependencies-
-      - run: ./install.sh
+      - run:
+          name: "Check CHANGES.md"
+          command: |
+            # https://discuss.circleci.com/t/get-list-of-commits-in-build/15725
+            # Extract commit range (or single commit)
+            COMMIT_RANGE=$(echo "${CIRCLE_COMPARE_URL}" | cut -d/ -f7)
+
+            # Fix single commit, unfortunately we don't always get a commit range from Circle CI
+            if [[ $COMMIT_RANGE != *"..."* ]]; then
+              COMMIT_RANGE="${COMMIT_RANGE}...${COMMIT_RANGE}"
+            fi
+            if git show --format=%B --quiet "$CIRCLE_SHA1" \
+               | grep '\[changelog skip\]' > /dev/null; then
+              echo "Skip changelog checker..."
+            elif [[ "$CIRCLE_TAG" != "" ]]; then
+              ! grep -i "to be released" CHANGES.md
+            else
+              [[ "$COMMIT_RANGE" = "" ]] || \
+              [[ "$(git diff --name-only "$COMMIT_RANGE" | grep CHANGES\.md)" != "" ]]
+            fi
+      - run:
+          name: "Installation"
+          command: ./install.sh
       - save_cache:
           paths:
             - node_modules
           key: dependencies-{{ checksum "package.json" }}
-      - run: npm test
+      - run:
+          name: "Unit testing"
+          command: npm test
