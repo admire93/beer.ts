@@ -1,0 +1,19 @@
+#!/bin/bash
+set -e
+
+if [[ "$(git diff --name-only --cached | grep ts)" != "" ]]; then
+  npm run lint
+else
+  echo "Skipping lint due to no changes of ts on diff...";
+fi
+
+if [[ "$(which shellcheck)" != "" ]]; then
+  if [[ "$(git diff --name-only --cached | grep sh)" != "" ]]; then
+    shellcheck ./*.sh
+  else
+    echo "Skipping lint due to no changes of sh on diff...";
+  fi
+else
+  echo "Recommend you to install shellcheck.";
+  echo "👉 https://github.com/koalaman/shellcheck";
+fi
