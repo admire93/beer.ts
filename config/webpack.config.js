@@ -2,6 +2,8 @@ var path = require('path');
 var webpack = require('webpack');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
+const rootDirectory = path.resolve(__dirname, '..');
+
 module.exports = {
   mode: 'development',
 
@@ -25,7 +27,7 @@ module.exports = {
     filename: 'bundle.js',
     // the output bundle
 
-    path: path.resolve(__dirname, '../dist'),
+    path: path.join(rootDirectory, 'dist'),
 
     publicPath: '/static/'
   },
@@ -57,7 +59,7 @@ module.exports = {
     new ForkTsCheckerWebpackPlugin({
       tslint: true,
       checkSyntacticErrors: true,
-      watch: ['./src'] // optional but improves performance (fewer stat calls)
+      watch: [path.join(rootDirectory, 'src')] // optional but improves performance (fewer stat calls)
     }),
   ],
 
