@@ -8,7 +8,8 @@
     "build": "webpack --config ./config/webpack.config.js",
     "start": "webpack-dev-server --mode development --config ./config/webpack.config.js",
     "lint": "tslint --project .",
-    "test": "jest"
+    "test": "jest",
+    "pretest": "npm run lint"
   },
   "jest": {
     "transform": {
