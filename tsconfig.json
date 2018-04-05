@@ -3,6 +3,7 @@
     "outDir": "./dist/",
     "noImplicitAny": true,
     "sourceMap": true,
+    "moduleResolution": "node",
     "module": "esnext",
     "lib": [
       "dom",
