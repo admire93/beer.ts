@@ -15,7 +15,7 @@
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "testRegex": "((\\.|/)(test|spec))\\.tsx?$",
     "moduleFileExtensions": [
       "ts",
       "tsx",
@@ -45,6 +45,7 @@
     "@types/react": "^16.3.1",
     "@types/react-dom": "^16.0.4",
     "@types/react-hot-loader": "^3.0.6",
+    "@types/react-redux": "^5.0.15",
     "@types/source-map": "^0.5.2",
     "@types/webpack": "^4.1.3",
     "copyfiles": "^2.0.0",
@@ -53,6 +54,8 @@
     "fork-ts-checker-webpack-plugin": "^0.4.1",
     "jest": "^22.4.3",
     "react-hot-loader": "^4.0.1",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2",
     "source-map": "^0.7.2",
     "ts-jest": "^22.4.2",
     "ts-loader": "^4.1.0",

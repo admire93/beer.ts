@@ -5,7 +5,9 @@
     ],
     "jsRules": {},
     "rules": {
-      "interface-name": [true, "never-prefix"]
+      "interface-name": [true, "never-prefix"],
+      "quotemark": [true, "single", "avoid-escape", "jsx-double"],
+      "import-sources-order": "lowercase-last"
     },
     "rulesDirectory": [],
 		"linterOptions": {
