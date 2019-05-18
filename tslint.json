@@ -7,7 +7,7 @@
     "rules": {
       "interface-name": [true, "never-prefix"],
       "quotemark": [true, "single", "avoid-escape", "jsx-double"],
-      "import-sources-order": "lowercase-last"
+      "ordered-imports": "lowercase-last"
     },
     "rulesDirectory": [],
 		"linterOptions": {
