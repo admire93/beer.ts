@@ -7,7 +7,7 @@ A beer is good drink.
 
 It requires,
 
-- npm 5.4.2+
+- yarn 1.16.0+
 - node 8.7.0+
 
 ```bash
@@ -18,5 +18,5 @@ It requires,
 ## Run
 
 ```bash
-$ npm run start
+$ yarn start
 ```

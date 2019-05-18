@@ -18,4 +18,4 @@ do
 done;
 
 echo "Installing library dependencies...";
-npm install;
+yarn
