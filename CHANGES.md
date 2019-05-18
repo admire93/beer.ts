@@ -2,6 +2,8 @@
 
 To be released.
 
+- Replaced npm with yarn.
+
 ## Service
 
 ## Code
